@@ -1,0 +1,213 @@
+/* ====== Global ====== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: #f4f7f9;
+    padding: 20px;
+}
+
+/* ====== Navbar ====== */
+.navbar {
+    background: #2980b9;
+    color: #fff;
+    padding: 15px 20px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.navbar h1 {
+    font-size: 1.5rem;
+}
+
+.logout-btn {
+    padding: 8px 15px;
+    border: none;
+    border-radius: 8px;
+    background: #e74c3c;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.logout-btn:hover {
+    background: #ff4c4c;
+}
+
+/* ====== Dashboard Container ====== */
+.dashboard-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.crop-selection {
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.crop-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.crop-btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+    background: #3498db;
+    color: #fff;
+}
+
+.crop-btn.active {
+    background: #1abc9c;
+}
+
+.crop-btn:hover {
+    background: #2980b9;
+}
+
+.crop-status {
+    margin-top: 15px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.crop-status.success {
+    color: #27ae60;
+}
+
+.crop-status.error {
+    color: #e74c3c;
+}
+
+.crop-status.info {
+    color: #2980b9;
+}
+
+/* ====== Sensor Data Cards ====== */
+.sensor-data {
+    margin-top: 20px;
+}
+
+.selected-crop-info {
+    font-weight: bold;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.data-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.data-card {
+    background: #fff;
+    padding: 15px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.data-icon {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.data-value {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #2980b9;
+}
+
+.last-updated {
+    text-align: center;
+    font-size: 0.9rem;
+    color: #555;
+}
+
+/* ====== Status Messages ====== */
+.status-messages {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+.status-message {
+    background: #3498db;
+    color: #fff;
+    padding: 10px 15px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.status-message.success {
+    background: #27ae60;
+}
+
+.status-message.error {
+    background: #e74c3c;
+}
+
+.status-message.info {
+    background: #2980b9;
+}
+
+/* ====== Chart Containers ====== */
+.chart-container {
+    background: #fff;
+    padding: 15px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+}
+
+.graphs-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 20px;
+    padding: 10px;
+}
+
+.graphs-grid canvas {
+    width: 100% !important;
+    height: 300px !important;
+}
+
+@media (max-width: 768px) {
+    .graphs-grid {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+    }
+}
+
+/* ===== Graph Headings ===== */
+.graphs h2 {
+    font-size: 28px;      /* Main section heading */
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.chart-container h3 {
+    font-size: 20px;      /* Individual graph headings */
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 10px;
+}
