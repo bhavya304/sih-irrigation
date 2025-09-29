@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgroSmart - Dashboard</title>
+    <link rel="stylesheet" href="style1.css">
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="nav-content">
+            <h1>🌾 AgroSmart Dashboard</h1>
+            <button id="logoutBtn" class="logout-btn">Logout</button>
+        </div>
+    </nav>
+
+    <!-- Main Dashboard Container -->
+    <div class="dashboard-container">
+
+        <!-- Crop Selection -->
+        <div class="crop-selection">
+            <h2>Select Crop Type</h2>
+            <div class="crop-buttons">
+                <button class="crop-btn" data-crop="1" data-name="Paddy">🌾 Paddy</button>
+                <button class="crop-btn" data-crop="2" data-name="Maize">🌽 Maize</button>
+                <button class="crop-btn" data-crop="3" data-name="Cardamom">🌿 Cardamom</button>
+            </div>
+            <div id="crop-status" class="crop-status"></div>
+        </div>
+
+        <!-- Live Sensor Data -->
+        <div class="sensor-data">
+            <h2>Live Sensor Data</h2>
+            <div id="selected-crop-info" class="selected-crop-info">
+                Please select a crop to view live data
+            </div>
+
+            <div class="data-grid" id="dataGrid" style="display:none;">
+                <div class="data-card">
+                    <div class="data-icon">💧</div>
+                    <div class="data-content">
+                        <h3>Soil Moisture</h3>
+                        <div class="data-value" id="soilMoisture">--</div>
+                    </div>
+                </div>
+
+                <div class="data-card">
+                    <div class="data-icon">⚡</div>
+                    <div class="data-content">
+                        <h3>Pump Status</h3>
+                        <div class="data-value" id="pumpStatus">--</div>
+                    </div>
+                </div>
+
+                <div class="data-card">
+                    <div class="data-icon">🚰</div>
+                    <div class="data-content">
+                        <h3>Water Level</h3>
+                        <div class="data-value" id="waterLevel">--</div>
+                        <div class="data-unit"></div>
+                    </div>
+                </div>
+
+                <div class="data-card">
+                    <div class="data-icon">📊</div>
+                    <div class="data-content">
+                        <h3>Max Threshold</h3>
+                        <div class="data-value" id="maxThreshold">--</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="last-updated">
+                Last updated: <span id="lastUpdated">Never</span>
+            </div>
+        </div>
+
+        <!-- Graphs -->
+        <div class="graphs">
+            <h2>Sensor Graphs</h2>
+            <div class="graphs-grid">
+                <div class="chart-container">
+                    <h3>Max Threshold</h3>
+                    <canvas id="thresholdChart"></canvas>
+                </div>
+                <div class="chart-container">
+                    <h3>Soil Moisture</h3>
+                    <canvas id="soilMoistureChart"></canvas>
+                </div>
+                <div class="chart-container">
+                    <h3>Water Level</h3>
+                    <canvas id="waterLevelChart"></canvas>
+                </div>
+                <div class="chart-container">
+                    <h3>Pump Status</h3>
+                    <canvas id="pumpStatusChart"></canvas>
+                </div>
+            </div>
+        </div>
+
+        <!-- Status messages -->
+        <div id="status-messages" class="status-messages"></div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+    <script
+        src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns@2.0.0/dist/chartjs-adapter-date-fns.bundle.min.js"></script>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
